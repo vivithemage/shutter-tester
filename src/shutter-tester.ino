@@ -72,17 +72,17 @@ void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(lightButtonPin, INPUT_PULLUP);
   // Initialise LCD and print intro
-  lcd.init();
+
   lcd.backlight();
   light = true;
   lcd.setCursor(0, 0);
-  lcd.print("=== Shutter Test ===");
+  Serial.println("=== Shutter Test ===");
   lcd.setCursor(0, 1);
-  lcd.print("Version " + version);
+  Serial.println("Version " + version);
   lcd.setCursor(0, 2);
-  lcd.print("Press reset to");
+  Serial.println("Press reset to");
   lcd.setCursor(0, 3);
-  lcd.print("start test.");
+  Serial.println("start test.");
   // Catch reset button press
   while (digitalRead(buttonPin) == HIGH)
   {
@@ -102,15 +102,15 @@ void setup_lcd() {
   */
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Exp #" + String(exposure));
+  Serial.println("Exp #" + String(exposure));
   lcd.setCursor(8, 0);
-  lcd.print("Avg:");
+  Serial.println("Avg:");
   lcd.setCursor(0, 1);
-  lcd.print("Speed:");
+  Serial.println("Speed:");
   lcd.setCursor(0, 2);
-  lcd.print("Min:");
+  Serial.println("Min:");
   lcd.setCursor(0, 3);
-  lcd.print("Max:");
+  Serial.println("Max:");
 }
 
 void loop() {
@@ -164,25 +164,25 @@ void print_result(String s, String avg) {
      Method for LCD output of results.
   */
   lcd.setCursor(5, 0);
-  lcd.print("   ");
+  Serial.println("   ");
   lcd.setCursor(5, 0);
-  lcd.print(String(exposure));
+  Serial.println(String(exposure));
   lcd.setCursor(13, 0);
-  lcd.print("       ");
+  Serial.println("       ");
   lcd.setCursor(13, 0);
-  lcd.print(avg);
+  Serial.println(avg);
   lcd.setCursor(7, 1);
-  lcd.print("            ");
+  Serial.println("            ");
   lcd.setCursor(7, 1);
-  lcd.print(s);
+  Serial.println(s);
   lcd.setCursor(5, 2);
-  lcd.print("               ");
+  Serial.println("               ");
   lcd.setCursor(5, 2);
-  lcd.print(mintime_s);
+  Serial.println(mintime_s);
   lcd.setCursor(5, 3);
-  lcd.print("               ");
+  Serial.println("               ");
   lcd.setCursor(5, 3);
-  lcd.print(maxtime_s);
+  Serial.println(maxtime_s);
 }
 
 String t_to_string(unsigned long timed) {

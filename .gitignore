@@ -69,3 +69,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
