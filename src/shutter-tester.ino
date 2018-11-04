@@ -64,26 +64,25 @@ void print_result(String s, String avg) {
   /*
      Method for LCD output of results.
   */
-  lcd.setCursor(0, 0);
-  lcd.println("   ");
-  lcd.setCursor(0, 0);
-  lcd.println(String(exposure));
-  /*lcd.setCursor(13, 0);
-  Serial.println("       ");
-  lcd.setCursor(13, 0);
-  Serial.println(avg);
+  lcd.setCursor(3, 0);
+  lcd.print(String(exposure));
+  lcd.setCursor(2, 1);
+  lcd.print(s);
+  lcd.setCursor(10, 0);
+  lcd.print(avg);
+  /*
   lcd.setCursor(7, 1);
-  Serial.println("            ");
+  lcd.print("            ");
   lcd.setCursor(7, 1);
-  Serial.println(s);
+  lcd.print(s);
   lcd.setCursor(5, 2);
-  Serial.println("               ");
+  lcd.print("               ");
   lcd.setCursor(5, 2);
-  Serial.println(mintime_s);
+  lcd.print(mintime_s);
   lcd.setCursor(5, 3);
-  Serial.println("               ");
+  lcd.print("               ");
   lcd.setCursor(5, 3);
-  Serial.println(maxtime_s);*/
+  lcd.print(maxtime_s);*/
 }
 
 void setup_lcd() {
@@ -93,7 +92,7 @@ void setup_lcd() {
     */
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("E: #" + String(exposure));
+  lcd.print("E:#" + String(exposure));
   lcd.setCursor(8, 0);
   lcd.print("A:");
   lcd.setCursor(0, 1);
@@ -161,8 +160,10 @@ void loop()
 
     // If a complete shutter release and reset was detected,
     // print the measured result.
+
     if (exposed)
     {
+      Serial.println("Exposed - now timing");
       unsigned long timed;
       String s = "";
       exposure++;
@@ -185,6 +186,7 @@ void loop()
           maxtime_s = s;
         }
       }
+      Serial.println("Finished timing");
       sum += timed;
       unsigned long avg = sum / exposure;
       print_result(s, t_to_string(avg));
