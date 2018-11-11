@@ -70,19 +70,6 @@ void print_result(String s, String avg) {
   lcd.print(s);
   lcd.setCursor(10, 0);
   lcd.print(avg);
-  /*
-  lcd.setCursor(7, 1);
-  lcd.print("            ");
-  lcd.setCursor(7, 1);
-  lcd.print(s);
-  lcd.setCursor(5, 2);
-  lcd.print("               ");
-  lcd.setCursor(5, 2);
-  lcd.print(mintime_s);
-  lcd.setCursor(5, 3);
-  lcd.print("               ");
-  lcd.setCursor(5, 3);
-  lcd.print(maxtime_s);*/
 }
 
 void setup_lcd() {
@@ -97,8 +84,6 @@ void setup_lcd() {
   lcd.print("A:");
   lcd.setCursor(0, 1);
   lcd.print("S:");
-  lcd.setCursor(8, 1);
-  lcd.print("M/M:");
 }
 
 void measure_exposure() {
