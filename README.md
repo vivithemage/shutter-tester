@@ -1,7 +1,8 @@
 # Shutter Tester
 
 ## IMPORTANT NOTE ABOUT THIS FORK
-This fork is a stripped down version and only uses one button to reset on pin 3
+This fork is a stripped down version and only uses one button to reset on pin 3.
+It's also set up to use a 2 x 16 lcd and displays less information (just the explosure time and the number of exposures).
 
 ## Disclaimer
 
