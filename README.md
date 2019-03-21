@@ -1,5 +1,8 @@
 # Shutter Tester
 
+## IMPORTANT NOTE ABOUT THIS FORK
+This fork is a stripped down version and only uses one button to reset on pin 3
+
 ## Disclaimer
 
 This is my first Arduino project and also my first project on github so please be patient with me. ;) The shutter tester seems to work resonably well for long exposures (1/250s or longer).
